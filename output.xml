@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231008 21:32:46.520" rpa="false" schemaversion="4">
+<suite id="s1" name="Flight Booking" source="c:\Users\immor\Documents\A5RS\flight_booking.robot">
+<test id="s1-t1" name="Flight Booking Test" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://blazedemo.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 21:32:46.869" level="INFO">Opening browser 'chrome' to base url 'http://blazedemo.com/'.</msg>
+<status status="PASS" starttime="20231008 21:32:46.868" endtime="20231008 21:32:50.930"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231008 21:32:50.931" endtime="20231008 21:32:51.042"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Welcome to the Simple Travel Agency!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231008 21:32:51.043" endtime="20231008 21:32:51.052"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Welcome to the Simple Travel Agency!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 21:32:51.063" level="INFO">Current page contains text 'Welcome to the Simple Travel Agency!'.</msg>
+<status status="PASS" starttime="20231008 21:32:51.052" endtime="20231008 21:32:51.063"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>name:fromPort</arg>
+<arg>${START_CITY}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231008 21:32:51.064" level="INFO">Selecting options from selection list 'name:fromPort' by value Boston.</msg>
+<status status="PASS" starttime="20231008 21:32:51.064" endtime="20231008 21:32:51.133"/>
+</kw>
+<kw name="Get Selected List Value" library="SeleniumLibrary">
+<var>${selected_start_city}</var>
+<arg>name:fromPort</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<msg timestamp="20231008 21:32:51.202" level="INFO">${selected_start_city} = Boston</msg>
+<status status="PASS" starttime="20231008 21:32:51.133" endtime="20231008 21:32:51.202"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>name:toPort</arg>
+<arg>${DESTINATION}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231008 21:32:51.202" level="INFO">Selecting options from selection list 'name:toPort' by value Cairo.</msg>
+<status status="PASS" starttime="20231008 21:32:51.202" endtime="20231008 21:32:51.256"/>
+</kw>
+<kw name="Get Selected List Value" library="SeleniumLibrary">
+<var>${selected_destination}</var>
+<arg>name:toPort</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<msg timestamp="20231008 21:32:51.321" level="INFO">${selected_destination} = Cairo</msg>
+<status status="PASS" starttime="20231008 21:32:51.256" endtime="20231008 21:32:51.321"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>css:input.btn.btn-primary</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231008 21:32:51.331" level="INFO">Current page contains element 'css:input.btn.btn-primary'.</msg>
+<status status="PASS" starttime="20231008 21:32:51.321" endtime="20231008 21:32:51.331"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css:input.btn.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 21:32:51.332" level="INFO">Clicking button 'css:input.btn.btn-primary'.</msg>
+<status status="PASS" starttime="20231008 21:32:51.331" endtime="20231008 21:32:51.733"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Flights from ${START_CITY} to ${DESTINATION}:</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231008 21:32:51.733" endtime="20231008 21:32:51.774"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Flights from ${START_CITY} to ${DESTINATION}:</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231008 21:32:51.782" level="INFO">Current page contains text 'Flights from Boston to Cairo:'.</msg>
+<status status="PASS" starttime="20231008 21:32:51.774" endtime="20231008 21:32:51.782"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>css:input.btn.btn-small</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231008 21:32:51.796" level="INFO">Current page contains element 'css:input.btn.btn-small'.</msg>
+<status status="PASS" starttime="20231008 21:32:51.783" endtime="20231008 21:32:51.796"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flight_info}</var>
+<arg>css:table.table tbody tr:nth-child(1)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231008 21:32:51.821" level="INFO">${flight_info} = 43 Virgin America 1:43 AM 9:45 PM $472.56</msg>
+<status status="PASS" starttime="20231008 21:32:51.796" endtime="20231008 21:32:51.821"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flight_price}</var>
+<arg>css:table.table tbody tr:nth-child(1) td:nth-child(6)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231008 21:32:51.842" level="INFO">${flight_price} = 9:45 PM</msg>
+<status status="PASS" starttime="20231008 21:32:51.821" endtime="20231008 21:32:51.842"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:table.table tbody tr:nth-child(1) td:nth-child(1) input[type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 21:32:51.842" level="INFO">Clicking element 'css:table.table tbody tr:nth-child(1) td:nth-child(1) input[type='submit']'.</msg>
+<msg timestamp="20231008 21:32:52.038" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231008 21:32:52.038" level="FAIL">Element with locator 'css:table.table tbody tr:nth-child(1) td:nth-child(1) input[type='submit']' not found.</msg>
+<status status="FAIL" starttime="20231008 21:32:51.842" endtime="20231008 21:32:52.042"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Your flight from ${START_CITY} to ${DESTINATION} has been reserved.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.043" endtime="20231008 21:32:52.043"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flight_number}</var>
+<arg>css:table.table tbody tr:nth-child(2) td:nth-child(2)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.043" endtime="20231008 21:32:52.043"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flight_airline}</var>
+<arg>css:table.table tbody tr:nth-child(2) td:nth-child(3)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.044" endtime="20231008 21:32:52.044"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flight_price}</var>
+<arg>css:table.table tbody tr:nth-child(2) td:nth-child(6)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.044" endtime="20231008 21:32:52.044"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${total_price}</var>
+<arg>css:table.table tbody tr:nth-child(4) td:nth-child(2)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.045" endtime="20231008 21:32:52.045"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:inputName</arg>
+<arg>John Doe</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.045" endtime="20231008 21:32:52.046"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>123 Main St</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.046" endtime="20231008 21:32:52.046"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:city</arg>
+<arg>Anytown</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.047" endtime="20231008 21:32:52.047"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:state</arg>
+<arg>CA</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.047" endtime="20231008 21:32:52.047"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:zipCode</arg>
+<arg>12345</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.049" endtime="20231008 21:32:52.049"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:cardType</arg>
+<arg>dinersclub</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.049" endtime="20231008 21:32:52.049"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:creditCardNumber</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.050" endtime="20231008 21:32:52.050"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:creditCardMonth</arg>
+<arg>${CARD_MONTH}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.050" endtime="20231008 21:32:52.050"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:creditCardYear</arg>
+<arg>${CARD_YEAR}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.051" endtime="20231008 21:32:52.051"/>
+</kw>
+<kw name="Click Checkbox">
+<arg>id:rememberMe</arg>
+<status status="NOT RUN" starttime="20231008 21:32:52.055" endtime="20231008 21:32:52.055"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css:input.btn.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.055" endtime="20231008 21:32:52.056"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Thank you for your purchase today!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.056" endtime="20231008 21:32:52.056"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Thank you for your purchase today!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.057" endtime="20231008 21:32:52.057"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${expiration}</var>
+<arg>css:table tbody tr:nth-child(1) td:nth-child(2)</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.057" endtime="20231008 21:32:52.058"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${flight_number}</arg>
+<arg>${flight_info.split()[0]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.058" endtime="20231008 21:32:52.058"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${flight_airline}</arg>
+<arg>${flight_info.split()[1]}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.059" endtime="20231008 21:32:52.059"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${flight_price}</arg>
+<arg>${total_price}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.059" endtime="20231008 21:32:52.059"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231008 21:32:52.059" endtime="20231008 21:32:52.059"/>
+</kw>
+<status status="FAIL" starttime="20231008 21:32:46.867" endtime="20231008 21:32:52.060">Element with locator 'css:table.table tbody tr:nth-child(1) td:nth-child(1) input[type='submit']' not found.</status>
+</test>
+<doc>Flight booking tests</doc>
+<status status="FAIL" starttime="20231008 21:32:46.527" endtime="20231008 21:32:52.062"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Flight Booking">Flight Booking</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
