@@ -1,546 +1,336 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231012 21:42:59.102" rpa="false" schemaversion="4">
-<suite id="s1" name="Bookaflight" source="c:\Users\ELSAMA\Desktop\A5RS\bookaflight.robot">
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231012 21:59:41.825" rpa="false" schemaversion="4">
+<suite id="s1" name="Bookaflight" source="c:\Users\ELSAMA\Documents\github\A5RS\bookaflight.robot">
 <test id="s1-t1" name="Go to Blazedemo webpage" line="7">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://blazedemo.com</arg>
 <arg>Chrome</arg>
 <arg>options=add_experimental_option("detach", True)</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231012 21:42:59.311" level="INFO">Opening browser 'Chrome' to base url 'http://blazedemo.com'.</msg>
-<status status="PASS" starttime="20231012 21:42:59.311" endtime="20231012 21:43:01.332"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 21:43:02.333" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231012 21:43:01.332" endtime="20231012 21:43:02.333"/>
+<msg timestamp="20231012 21:59:42.047" level="INFO">Opening browser 'Chrome' to base url 'http://blazedemo.com'.</msg>
+<status status="PASS" starttime="20231012 21:59:42.047" endtime="20231012 21:59:44.223"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231012 21:43:02.334" endtime="20231012 21:43:02.467"/>
+<status status="PASS" starttime="20231012 21:59:44.225" endtime="20231012 21:59:44.351"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 21:43:03.469" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231012 21:43:02.468" endtime="20231012 21:43:03.469"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Welcome to the Simple Travel Agency!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231012 21:43:03.475" level="INFO">Current page contains text 'Welcome to the Simple Travel Agency!'.</msg>
-<status status="PASS" starttime="20231012 21:43:03.469" endtime="20231012 21:43:03.475"/>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231012 21:59:44.351" endtime="20231012 21:59:44.361"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 21:43:05.479" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20231012 21:43:03.475" endtime="20231012 21:43:05.479"/>
-</kw>
-<status status="PASS" starttime="20231012 21:42:59.310" endtime="20231012 21:43:05.479"/>
+<status status="PASS" starttime="20231012 21:59:42.030" endtime="20231012 21:59:44.361"/>
 </test>
-<test id="s1-t2" name="Choose your departure and destination" line="21">
-<kw name="Click Element" library="SeleniumLibrary">
+<test id="s1-t2" name="Choose your departure and destination" line="12">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>name:fromPort</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:05.483" level="INFO">Clicking element 'name:fromPort'.</msg>
-<status status="PASS" starttime="20231012 21:43:05.483" endtime="20231012 21:43:05.547"/>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231012 21:59:44.364" endtime="20231012 21:59:44.387"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
-<var>${depart}</var>
 <arg>name:fromPort</arg>
 <arg>Boston</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231012 21:43:05.549" level="INFO">Selecting options from selection list 'name:fromPort' by value Boston.</msg>
-<msg timestamp="20231012 21:43:05.623" level="INFO">${depart} = None</msg>
-<status status="PASS" starttime="20231012 21:43:05.548" endtime="20231012 21:43:05.623"/>
+<msg timestamp="20231012 21:59:44.388" level="INFO">Selecting options from selection list 'name:fromPort' by value Boston.</msg>
+<status status="PASS" starttime="20231012 21:59:44.388" endtime="20231012 21:59:44.468"/>
 </kw>
 <kw name="Get Selected List Value" library="SeleniumLibrary">
-<var>${depart}</var>
+<var>${departure}</var>
 <arg>name:fromPort</arg>
 <doc>Returns the value of selected option from selection list ``locator``.</doc>
-<msg timestamp="20231012 21:43:05.686" level="INFO">${depart} = Boston</msg>
-<status status="PASS" starttime="20231012 21:43:05.623" endtime="20231012 21:43:05.687"/>
+<msg timestamp="20231012 21:59:44.535" level="INFO">${departure} = Boston</msg>
+<status status="PASS" starttime="20231012 21:59:44.468" endtime="20231012 21:59:44.535"/>
 </kw>
-<kw name="Set Suite Variable" library="BuiltIn">
-<arg>${departure}</arg>
-<arg>${depart}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20231012 21:43:05.688" level="INFO">${departure} = Boston</msg>
-<status status="PASS" starttime="20231012 21:43:05.687" endtime="20231012 21:43:05.688"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>name:toPort</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:05.689" level="INFO">Clicking element 'name:toPort'.</msg>
-<status status="PASS" starttime="20231012 21:43:05.689" endtime="20231012 21:43:05.749"/>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231012 21:59:44.535" endtime="20231012 21:59:44.553"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
-<var>${destin}</var>
 <arg>name:toPort</arg>
 <arg>Cairo</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231012 21:43:05.750" level="INFO">Selecting options from selection list 'name:toPort' by value Cairo.</msg>
-<msg timestamp="20231012 21:43:05.825" level="INFO">${destin} = None</msg>
-<status status="PASS" starttime="20231012 21:43:05.750" endtime="20231012 21:43:05.826"/>
+<msg timestamp="20231012 21:59:44.553" level="INFO">Selecting options from selection list 'name:toPort' by value Cairo.</msg>
+<status status="PASS" starttime="20231012 21:59:44.553" endtime="20231012 21:59:44.609"/>
 </kw>
 <kw name="Get Selected List Value" library="SeleniumLibrary">
-<var>${destin}</var>
+<var>${destination}</var>
 <arg>name:toPort</arg>
 <doc>Returns the value of selected option from selection list ``locator``.</doc>
-<msg timestamp="20231012 21:43:05.898" level="INFO">${destin} = Cairo</msg>
-<status status="PASS" starttime="20231012 21:43:05.826" endtime="20231012 21:43:05.898"/>
+<msg timestamp="20231012 21:59:44.693" level="INFO">${destination} = Cairo</msg>
+<status status="PASS" starttime="20231012 21:59:44.609" endtime="20231012 21:59:44.693"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${departure}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231012 21:59:44.699" level="INFO">${departure} = Boston</msg>
+<status status="PASS" starttime="20231012 21:59:44.693" endtime="20231012 21:59:44.699"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${destination}</arg>
-<arg>${destin}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20231012 21:43:05.899" level="INFO">${destination} = Cairo</msg>
-<status status="PASS" starttime="20231012 21:43:05.899" endtime="20231012 21:43:05.899"/>
+<msg timestamp="20231012 21:59:44.699" level="INFO">${destination} = Cairo</msg>
+<status status="PASS" starttime="20231012 21:59:44.699" endtime="20231012 21:59:44.700"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Departure: ${departure}, Destination: ${destination}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 21:43:05.899" endtime="20231012 21:43:05.901"/>
-</kw>
-<status status="PASS" starttime="20231012 21:43:05.481" endtime="20231012 21:43:05.901"/>
+<status status="PASS" starttime="20231012 21:59:44.364" endtime="20231012 21:59:44.700"/>
 </test>
-<test id="s1-t3" name="&quot;Find Flights&quot; button is usable" line="37">
-<kw name="Page Should Contain Button" library="SeleniumLibrary">
-<arg>xpath://html/body/div[3]/form/div/input</arg>
-<doc>Verifies button ``locator`` is found from current page.</doc>
-<msg timestamp="20231012 21:43:05.918" level="INFO">Current page contains input 'xpath://html/body/div[3]/form/div/input'.</msg>
-<status status="PASS" starttime="20231012 21:43:05.903" endtime="20231012 21:43:05.918"/>
+<test id="s1-t3" name="Find Flights button functionality" line="23">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://input[@value='Find Flights']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231012 21:59:44.702" endtime="20231012 21:59:44.717"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://input[@value='Find Flights']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:05.919" level="INFO">Clicking button 'xpath://input[@value='Find Flights']'.</msg>
-<status status="PASS" starttime="20231012 21:43:05.919" endtime="20231012 21:43:09.606"/>
+<msg timestamp="20231012 21:59:44.717" level="INFO">Clicking button 'xpath://input[@value='Find Flights']'.</msg>
+<status status="PASS" starttime="20231012 21:59:44.717" endtime="20231012 21:59:45.074"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 21:43:10.608" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231012 21:43:09.607" endtime="20231012 21:43:10.608"/>
-</kw>
-<status status="PASS" starttime="20231012 21:43:05.901" endtime="20231012 21:43:10.609"/>
+<status status="PASS" starttime="20231012 21:59:44.701" endtime="20231012 21:59:45.074"/>
 </test>
-<test id="s1-t4" name="Check the results and pick your flight" line="46">
-<kw name="Page Should Contain" library="SeleniumLibrary">
+<test id="s1-t4" name="Verify results and select flight" line="27">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Flights from ${departure} to ${destination}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231012 21:43:10.621" level="INFO">Current page contains text 'Flights from Boston to Cairo'.</msg>
-<status status="PASS" starttime="20231012 21:43:10.610" endtime="20231012 21:43:10.622"/>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231012 21:59:45.075" endtime="20231012 21:59:45.107"/>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath://html/body/div[2]/table/tbody/tr[1]/td[1]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20231012 21:43:10.633" level="INFO">Current page contains element 'xpath://html/body/div[2]/table/tbody/tr[1]/td[1]'.</msg>
-<status status="PASS" starttime="20231012 21:43:10.622" endtime="20231012 21:43:10.633"/>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231012 21:59:45.107" endtime="20231012 21:59:45.128"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${price}</var>
 <arg>xpath:/html/body/div[2]/table/tbody/tr[5]/td[6]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:10.653" level="INFO">${price} = $233.98</msg>
-<status status="PASS" starttime="20231012 21:43:10.634" endtime="20231012 21:43:10.653"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${price}</var>
-<arg>${price}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231012 21:43:10.654" level="INFO">${price} = $233.98</msg>
-<status status="PASS" starttime="20231012 21:43:10.653" endtime="20231012 21:43:10.654"/>
+<msg timestamp="20231012 21:59:45.149" level="INFO">${price} = $233.98</msg>
+<status status="PASS" starttime="20231012 21:59:45.129" endtime="20231012 21:59:45.149"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${company}</var>
 <arg>xpath:/html/body/div[2]/table/tbody/tr[5]/td[3]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:10.669" level="INFO">${company} = Lufthansa</msg>
-<status status="PASS" starttime="20231012 21:43:10.654" endtime="20231012 21:43:10.670"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${company}</var>
-<arg>${company}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231012 21:43:10.670" level="INFO">${company} = Lufthansa</msg>
-<status status="PASS" starttime="20231012 21:43:10.670" endtime="20231012 21:43:10.670"/>
+<msg timestamp="20231012 21:59:45.168" level="INFO">${company} = Lufthansa</msg>
+<status status="PASS" starttime="20231012 21:59:45.150" endtime="20231012 21:59:45.168"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${flightno}</var>
 <arg>xpath:/html/body/div[2]/table/tbody/tr[5]/td[2]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:10.688" level="INFO">${flightno} = 4346</msg>
-<status status="PASS" starttime="20231012 21:43:10.671" endtime="20231012 21:43:10.688"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${flightno}</var>
-<arg>${flightno}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231012 21:43:10.688" level="INFO">${flightno} = 4346</msg>
-<status status="PASS" starttime="20231012 21:43:10.688" endtime="20231012 21:43:10.688"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Price: ${price}, Company: ${company}, Flight no:${flightno}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 21:43:10.689" endtime="20231012 21:43:10.689"/>
+<msg timestamp="20231012 21:59:45.185" level="INFO">${flightno} = 4346</msg>
+<status status="PASS" starttime="20231012 21:59:45.168" endtime="20231012 21:59:45.185"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://html/body/div[2]/table/tbody/tr[5]/td[1]/input</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:10.690" level="INFO">Clicking button 'xpath://html/body/div[2]/table/tbody/tr[5]/td[1]/input'.</msg>
-<status status="PASS" starttime="20231012 21:43:10.690" endtime="20231012 21:43:11.059"/>
+<msg timestamp="20231012 21:59:45.186" level="INFO">Clicking button 'xpath://html/body/div[2]/table/tbody/tr[5]/td[1]/input'.</msg>
+<status status="PASS" starttime="20231012 21:59:45.186" endtime="20231012 21:59:48.312"/>
 </kw>
-<status status="PASS" starttime="20231012 21:43:10.610" endtime="20231012 21:43:11.061"/>
+<status status="PASS" starttime="20231012 21:59:45.075" endtime="20231012 21:59:48.313"/>
 </test>
-<test id="s1-t5" name="Check that flight info is found on the new page and save the full price as a variable" line="68">
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${bookedprice}</var>
-<arg>xpath://html/body/div[2]/p[3]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.088" level="INFO">${bookedprice} = Price: 400</msg>
-<status status="PASS" starttime="20231012 21:43:11.063" endtime="20231012 21:43:11.089"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<arg>${bookedprice}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" starttime="20231012 21:43:11.089" endtime="20231012 21:43:11.089"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${bookedcompany}</var>
-<arg>xpath://html/body/div[2]/p[1]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.108" level="INFO">${bookedcompany} = Airline: United</msg>
-<status status="PASS" starttime="20231012 21:43:11.090" endtime="20231012 21:43:11.108"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<arg>${bookedcompany}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" starttime="20231012 21:43:11.108" endtime="20231012 21:43:11.108"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${bookedflightno}</var>
-<arg>xpath://html/body/div[2]/p[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.125" level="INFO">${bookedflightno} = Flight Number: UA954</msg>
-<status status="PASS" starttime="20231012 21:43:11.110" endtime="20231012 21:43:11.126"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<arg>${bookedflightno}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" starttime="20231012 21:43:11.126" endtime="20231012 21:43:11.126"/>
-</kw>
-<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
-<arg>Should Be Equal</arg>
+<test id="s1-t5" name="Verify selected flight on new page" line="37">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${price}</arg>
-<arg>${bookedprice}</arg>
-<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${price}</arg>
-<arg>${bookedprice}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<msg timestamp="20231012 21:43:11.129" level="FAIL">Variable '${price}' not found.</msg>
-<status status="FAIL" starttime="20231012 21:43:11.128" endtime="20231012 21:43:11.129"/>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20231012 21:59:48.314" level="FAIL">Variable '${price}' not found.</msg>
+<status status="FAIL" starttime="20231012 21:59:48.314" endtime="20231012 21:59:48.314"/>
 </kw>
-<status status="FAIL" starttime="20231012 21:43:11.128" endtime="20231012 21:43:11.129"/>
-</kw>
-<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
-<arg>Should Be Equal</arg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${company}</arg>
-<arg>${bookedcompany}</arg>
-<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${company}</arg>
-<arg>${bookedcompany}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<msg timestamp="20231012 21:43:11.130" level="FAIL">Variable '${company}' not found.</msg>
-<status status="FAIL" starttime="20231012 21:43:11.129" endtime="20231012 21:43:11.130"/>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20231012 21:59:48.314" endtime="20231012 21:59:48.314"/>
 </kw>
-<status status="FAIL" starttime="20231012 21:43:11.129" endtime="20231012 21:43:11.130"/>
-</kw>
-<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
-<arg>Should Be Equal</arg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>${flightno}</arg>
-<arg>${bookedflightno}</arg>
-<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${flightno}</arg>
-<arg>${bookedflightno}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<msg timestamp="20231012 21:43:11.131" level="FAIL">Variable '${flightno}' not found.</msg>
-<status status="FAIL" starttime="20231012 21:43:11.130" endtime="20231012 21:43:11.131"/>
-</kw>
-<status status="FAIL" starttime="20231012 21:43:11.130" endtime="20231012 21:43:11.131"/>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20231012 21:59:48.318" endtime="20231012 21:59:48.318"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${fullprice}</var>
 <arg>xpath://html/body/div[2]/p[5]/em</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.150" level="INFO">${fullprice} = 914.76</msg>
-<status status="PASS" starttime="20231012 21:43:11.132" endtime="20231012 21:43:11.151"/>
+<status status="NOT RUN" starttime="20231012 21:59:48.318" endtime="20231012 21:59:48.318"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${fullprice}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20231012 21:43:11.152" level="INFO">${fullprice} = 914.76</msg>
-<status status="PASS" starttime="20231012 21:43:11.151" endtime="20231012 21:43:11.152"/>
+<status status="NOT RUN" starttime="20231012 21:59:48.318" endtime="20231012 21:59:48.318"/>
 </kw>
-<status status="FAIL" starttime="20231012 21:43:11.062" endtime="20231012 21:43:11.152">Several failures occurred:
-
-1) Variable '${price}' not found.
-
-2) Variable '${company}' not found.
-
-3) Variable '${flightno}' not found.</status>
+<status status="FAIL" starttime="20231012 21:59:48.314" endtime="20231012 21:59:48.321">Variable '${price}' not found.</status>
 </test>
-<test id="s1-t6" name="Fill out the traveler name and address" line="88">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:inputName</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.156" level="INFO">Clicking element 'id:inputName'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.155" endtime="20231012 21:43:11.207"/>
-</kw>
+<test id="s1-t6" name="Fill traveler info" line="45">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:inputName</arg>
 <arg>Mari Malli</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.209" level="INFO">Typing text 'Mari Malli' into text field 'id:inputName'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.207" endtime="20231012 21:43:11.272"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:address</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.275" level="INFO">Clicking element 'id:address'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.273" endtime="20231012 21:43:11.322"/>
+<msg timestamp="20231012 21:59:48.324" level="INFO">Typing text 'Mari Malli' into text field 'id:inputName'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.324" endtime="20231012 21:59:48.401"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:address</arg>
 <arg>Katu 12</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.324" level="INFO">Typing text 'Katu 12' into text field 'id:address'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.322" endtime="20231012 21:43:11.374"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:city</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.376" level="INFO">Clicking element 'id:city'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.375" endtime="20231012 21:43:11.426"/>
+<msg timestamp="20231012 21:59:48.402" level="INFO">Typing text 'Katu 12' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.402" endtime="20231012 21:59:48.483"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:city</arg>
 <arg>Oulu</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.427" level="INFO">Typing text 'Oulu' into text field 'id:city'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.426" endtime="20231012 21:43:11.485"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:state</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.487" level="INFO">Clicking element 'id:state'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.486" endtime="20231012 21:43:11.536"/>
+<msg timestamp="20231012 21:59:48.484" level="INFO">Typing text 'Oulu' into text field 'id:city'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.484" endtime="20231012 21:59:48.563"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:state</arg>
 <arg>Suomi</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.538" level="INFO">Typing text 'Suomi' into text field 'id:state'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.538" endtime="20231012 21:43:11.601"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:zipCode</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.603" level="INFO">Clicking element 'id:zipCode'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.603" endtime="20231012 21:43:11.659"/>
+<msg timestamp="20231012 21:59:48.563" level="INFO">Typing text 'Suomi' into text field 'id:state'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.563" endtime="20231012 21:59:48.629"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:zipCode</arg>
 <arg>32100</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.660" level="INFO">Typing text '32100' into text field 'id:zipCode'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.659" endtime="20231012 21:43:11.716"/>
+<msg timestamp="20231012 21:59:48.631" level="INFO">Typing text '32100' into text field 'id:zipCode'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.630" endtime="20231012 21:59:48.708"/>
 </kw>
-<status status="PASS" starttime="20231012 21:43:11.154" endtime="20231012 21:43:11.717"/>
+<status status="PASS" starttime="20231012 21:59:48.323" endtime="20231012 21:59:48.708"/>
 </test>
-<test id="s1-t7" name="Fill out the credit card info" line="106">
-<kw name="Click Element" library="SeleniumLibrary">
+<test id="s1-t7" name="Fill credit card info" line="52">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>id:cardType</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.719" level="INFO">Clicking element 'id:cardType'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.719" endtime="20231012 21:43:11.781"/>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231012 21:59:48.710" endtime="20231012 21:59:48.727"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>id:cardType</arg>
 <arg>dinersclub</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20231012 21:43:11.782" level="INFO">Selecting options from selection list 'id:cardType' by value dinersclub.</msg>
-<status status="PASS" starttime="20231012 21:43:11.782" endtime="20231012 21:43:11.850"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:creditCardNumber</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.851" level="INFO">Clicking element 'id:creditCardNumber'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.851" endtime="20231012 21:43:11.903"/>
+<msg timestamp="20231012 21:59:48.727" level="INFO">Selecting options from selection list 'id:cardType' by value dinersclub.</msg>
+<status status="PASS" starttime="20231012 21:59:48.727" endtime="20231012 21:59:48.803"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:creditCardNumber</arg>
 <arg>1234567890</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.904" level="INFO">Typing text '1234567890' into text field 'id:creditCardNumber'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.903" endtime="20231012 21:43:11.966"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:creditCardMonth</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:11.967" level="INFO">Clicking element 'id:creditCardMonth'.</msg>
-<status status="PASS" starttime="20231012 21:43:11.967" endtime="20231012 21:43:12.013"/>
+<msg timestamp="20231012 21:59:48.803" level="INFO">Typing text '1234567890' into text field 'id:creditCardNumber'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.803" endtime="20231012 21:59:48.892"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:creditCardMonth</arg>
 <arg>7</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.015" level="INFO">Typing text '7' into text field 'id:creditCardMonth'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.015" endtime="20231012 21:43:12.085"/>
+<msg timestamp="20231012 21:59:48.892" level="INFO">Typing text '7' into text field 'id:creditCardMonth'.</msg>
+<status status="PASS" starttime="20231012 21:59:48.892" endtime="20231012 21:59:48.984"/>
 </kw>
 <kw name="Get Value" library="SeleniumLibrary">
 <var>${cardMonth}</var>
 <arg>id:creditCardMonth</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.102" level="INFO">${cardMonth} = 7</msg>
-<status status="PASS" starttime="20231012 21:43:12.086" endtime="20231012 21:43:12.102"/>
+<msg timestamp="20231012 21:59:49.004" level="INFO">${cardMonth} = 7</msg>
+<status status="PASS" starttime="20231012 21:59:48.984" endtime="20231012 21:59:49.004"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${cardMonth}</arg>
-<arg>${cardMonth}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20231012 21:43:12.103" level="INFO">${cardMonth} = 7</msg>
-<status status="PASS" starttime="20231012 21:43:12.102" endtime="20231012 21:43:12.103"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Month: ${cardMonth}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 21:43:12.104" endtime="20231012 21:43:12.104"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:creditCardYear</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.106" level="INFO">Clicking element 'id:creditCardYear'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.106" endtime="20231012 21:43:12.147"/>
+<msg timestamp="20231012 21:59:49.004" level="INFO">${cardMonth} = 7</msg>
+<status status="PASS" starttime="20231012 21:59:49.004" endtime="20231012 21:59:49.004"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:creditCardYear</arg>
 <arg>2025</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.148" level="INFO">Typing text '2025' into text field 'id:creditCardYear'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.147" endtime="20231012 21:43:12.234"/>
+<msg timestamp="20231012 21:59:49.007" level="INFO">Typing text '2025' into text field 'id:creditCardYear'.</msg>
+<status status="PASS" starttime="20231012 21:59:49.006" endtime="20231012 21:59:49.081"/>
 </kw>
 <kw name="Get Value" library="SeleniumLibrary">
 <var>${cardYear}</var>
 <arg>id:creditCardYear</arg>
 <doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.251" level="INFO">${cardYear} = 2025</msg>
-<status status="PASS" starttime="20231012 21:43:12.234" endtime="20231012 21:43:12.253"/>
+<msg timestamp="20231012 21:59:49.105" level="INFO">${cardYear} = 2025</msg>
+<status status="PASS" starttime="20231012 21:59:49.081" endtime="20231012 21:59:49.105"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${cardYear}</arg>
-<arg>${cardYear}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20231012 21:43:12.253" level="INFO">${cardYear} = 2025</msg>
-<status status="PASS" starttime="20231012 21:43:12.253" endtime="20231012 21:43:12.253"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Year: ${cardYear}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 21:43:12.254" endtime="20231012 21:43:12.254"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id:nameOnCard</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.256" level="INFO">Clicking element 'id:nameOnCard'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.256" endtime="20231012 21:43:12.302"/>
+<msg timestamp="20231012 21:59:49.106" level="INFO">${cardYear} = 2025</msg>
+<status status="PASS" starttime="20231012 21:59:49.106" endtime="20231012 21:59:49.106"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:nameOnCard</arg>
 <arg>Mari Malli</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.304" level="INFO">Typing text 'Mari Malli' into text field 'id:nameOnCard'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.302" endtime="20231012 21:43:12.373"/>
+<msg timestamp="20231012 21:59:49.107" level="INFO">Typing text 'Mari Malli' into text field 'id:nameOnCard'.</msg>
+<status status="PASS" starttime="20231012 21:59:49.107" endtime="20231012 21:59:49.190"/>
 </kw>
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>id:rememberMe</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.374" level="INFO">Selecting checkbox 'id:rememberMe'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.373" endtime="20231012 21:43:12.443"/>
+<msg timestamp="20231012 21:59:49.190" level="INFO">Selecting checkbox 'id:rememberMe'.</msg>
+<status status="PASS" starttime="20231012 21:59:49.190" endtime="20231012 21:59:49.262"/>
+</kw>
+<kw name="Wait And Click Button">
+<arg>xpath:/html/body/div[2]/form/div[11]/div/input</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231012 21:59:49.262" endtime="20231012 21:59:49.276"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath:/html/body/div[2]/form/div[11]/div/input</arg>
+<arg>${locator}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:12.444" level="INFO">Clicking button 'xpath:/html/body/div[2]/form/div[11]/div/input'.</msg>
-<status status="PASS" starttime="20231012 21:43:12.444" endtime="20231012 21:43:12.787"/>
+<msg timestamp="20231012 21:59:49.276" level="INFO">Clicking button 'xpath:/html/body/div[2]/form/div[11]/div/input'.</msg>
+<status status="PASS" starttime="20231012 21:59:49.276" endtime="20231012 21:59:49.718"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231012 21:43:13.788" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231012 21:43:12.787" endtime="20231012 21:43:13.788"/>
+<status status="PASS" starttime="20231012 21:59:49.262" endtime="20231012 21:59:49.718"/>
 </kw>
-<status status="PASS" starttime="20231012 21:43:11.717" endtime="20231012 21:43:13.788"/>
+<status status="PASS" starttime="20231012 21:59:48.708" endtime="20231012 21:59:49.719"/>
 </test>
-<test id="s1-t8" name="The booking confirmation page" line="141">
-<kw name="Page Should Contain" library="SeleniumLibrary">
+<test id="s1-t8" name="Booking confirmation and verification" line="71">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Thank you for your purchase today!</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20231012 21:43:13.801" level="INFO">Current page contains text 'Thank you for your purchase today!'.</msg>
-<status status="PASS" starttime="20231012 21:43:13.790" endtime="20231012 21:43:13.802"/>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231012 21:59:49.721" endtime="20231012 21:59:49.735"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${cardExpires}</var>
 <arg>xpath://html/body/div[2]/div/table/tbody/tr[5]/td[2]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:13.818" level="INFO">${cardExpires} = 11 /2018</msg>
-<status status="PASS" starttime="20231012 21:43:13.802" endtime="20231012 21:43:13.818"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<arg>${cardExpires}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" starttime="20231012 21:43:13.818" endtime="20231012 21:43:13.818"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>New variable: ${cardExpires}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 21:43:13.818" endtime="20231012 21:43:13.820"/>
+<msg timestamp="20231012 21:59:49.754" level="INFO">${cardExpires} = 11 /2018</msg>
+<status status="PASS" starttime="20231012 21:59:49.735" endtime="20231012 21:59:49.754"/>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <arg>Should Be Equal</arg>
-<arg>${cardMonth}, ${cardYear}</arg>
+<arg>${cardMonth}/${cardYear}</arg>
 <arg>${cardExpires}</arg>
 <doc>Runs the keyword and continues execution even if a failure occurs.</doc>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${cardMonth}, ${cardYear}</arg>
+<arg>${cardMonth}/${cardYear}</arg>
 <arg>${cardExpires}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<msg timestamp="20231012 21:43:13.821" level="FAIL">7, 2025 != 11 /2018</msg>
-<status status="FAIL" starttime="20231012 21:43:13.821" endtime="20231012 21:43:13.821"/>
+<msg timestamp="20231012 21:59:49.757" level="FAIL">7/2025 != 11 /2018</msg>
+<status status="FAIL" starttime="20231012 21:59:49.756" endtime="20231012 21:59:49.757"/>
 </kw>
-<status status="FAIL" starttime="20231012 21:43:13.820" endtime="20231012 21:43:13.821"/>
+<status status="FAIL" starttime="20231012 21:59:49.755" endtime="20231012 21:59:49.757"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${totalPrice}</var>
 <arg>xpath://html/body/div[2]/div/table/tbody/tr[3]/td[2]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231012 21:43:13.841" level="INFO">${totalPrice} = 555 USD</msg>
-<status status="PASS" starttime="20231012 21:43:13.822" endtime="20231012 21:43:13.842"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<arg>${totalPrice}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" starttime="20231012 21:43:13.842" endtime="20231012 21:43:13.842"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>New variable: ${totalPrice}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231012 21:43:13.843" endtime="20231012 21:43:13.843"/>
+<msg timestamp="20231012 21:59:49.773" level="INFO">${totalPrice} = 555 USD</msg>
+<status status="PASS" starttime="20231012 21:59:49.758" endtime="20231012 21:59:49.773"/>
 </kw>
 <kw name="Run Keyword And Continue On Failure" library="BuiltIn">
 <arg>Should Be Equal</arg>
@@ -551,22 +341,22 @@
 <arg>${fullprice}</arg>
 <arg>${totalPrice}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<msg timestamp="20231012 21:43:13.845" level="FAIL">914.76 != 555 USD</msg>
-<status status="FAIL" starttime="20231012 21:43:13.845" endtime="20231012 21:43:13.846"/>
+<msg timestamp="20231012 21:59:49.775" level="FAIL">Variable '${fullprice}' not found.</msg>
+<status status="FAIL" starttime="20231012 21:59:49.775" endtime="20231012 21:59:49.775"/>
 </kw>
-<status status="FAIL" starttime="20231012 21:43:13.845" endtime="20231012 21:43:13.846"/>
+<status status="FAIL" starttime="20231012 21:59:49.775" endtime="20231012 21:59:49.776"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231012 21:43:13.847" endtime="20231012 21:43:15.946"/>
+<status status="PASS" starttime="20231012 21:59:49.776" endtime="20231012 21:59:51.871"/>
 </kw>
-<status status="FAIL" starttime="20231012 21:43:13.790" endtime="20231012 21:43:15.947">Several failures occurred:
+<status status="FAIL" starttime="20231012 21:59:49.721" endtime="20231012 21:59:51.871">Several failures occurred:
 
-1) 7, 2025 != 11 /2018
+1) 7/2025 != 11 /2018
 
-2) 914.76 != 555 USD</status>
+2) Variable '${fullprice}' not found.</status>
 </test>
-<status status="FAIL" starttime="20231012 21:42:59.107" endtime="20231012 21:43:15.950"/>
+<status status="FAIL" starttime="20231012 21:59:41.829" endtime="20231012 21:59:51.871"/>
 </suite>
 <statistics>
 <total>
