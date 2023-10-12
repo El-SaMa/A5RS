@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231013 00:41:02.419" rpa="false" schemaversion="4">
+<suite id="s1" name="Bookaflight" source="c:\Users\ELSAMA\Documents\github\A5RS\bookaflight.robot">
+<test id="s1-t1" name="Go to Blazedemo webpage" line="6">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://blazedemo.com</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231013 00:41:02.623" level="INFO">Opening browser 'Chrome' to base url 'http://blazedemo.com'.</msg>
+<status status="PASS" starttime="20231013 00:41:02.622" endtime="20231013 00:41:11.649"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231013 00:41:11.650" endtime="20231013 00:41:11.782"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Welcome to the Simple Travel Agency!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231013 00:41:11.797" level="INFO">Current page contains text 'Welcome to the Simple Travel Agency!'.</msg>
+<status status="PASS" starttime="20231013 00:41:11.783" endtime="20231013 00:41:11.797"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:02.621" endtime="20231013 00:41:11.798"/>
+</test>
+<test id="s1-t2" name="Choose your departure and destination" line="13">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name:fromPort</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:11.822" level="INFO">Clicking element 'name:fromPort'.</msg>
+<status status="PASS" starttime="20231013 00:41:11.800" endtime="20231013 00:41:11.946"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<var>${depart}</var>
+<arg>name:fromPort</arg>
+<arg>Boston</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231013 00:41:11.948" level="INFO">Selecting options from selection list 'name:fromPort' by value Boston.</msg>
+<msg timestamp="20231013 00:41:12.033" level="INFO">${depart} = None</msg>
+<status status="PASS" starttime="20231013 00:41:11.947" endtime="20231013 00:41:12.033"/>
+</kw>
+<kw name="Get Selected List Value" library="SeleniumLibrary">
+<var>${depart}</var>
+<arg>name:fromPort</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<msg timestamp="20231013 00:41:12.099" level="INFO">${depart} = Boston</msg>
+<status status="PASS" starttime="20231013 00:41:12.034" endtime="20231013 00:41:12.100"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${departure}</arg>
+<arg>${depart}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231013 00:41:12.100" level="INFO">${departure} = Boston</msg>
+<status status="PASS" starttime="20231013 00:41:12.100" endtime="20231013 00:41:12.101"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name:toPort</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:12.101" level="INFO">Clicking element 'name:toPort'.</msg>
+<status status="PASS" starttime="20231013 00:41:12.101" endtime="20231013 00:41:12.162"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<var>${destin}</var>
+<arg>name:toPort</arg>
+<arg>Cairo</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231013 00:41:12.164" level="INFO">Selecting options from selection list 'name:toPort' by value Cairo.</msg>
+<msg timestamp="20231013 00:41:12.233" level="INFO">${destin} = None</msg>
+<status status="PASS" starttime="20231013 00:41:12.163" endtime="20231013 00:41:12.233"/>
+</kw>
+<kw name="Get Selected List Value" library="SeleniumLibrary">
+<var>${destin}</var>
+<arg>name:toPort</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<msg timestamp="20231013 00:41:12.326" level="INFO">${destin} = Cairo</msg>
+<status status="PASS" starttime="20231013 00:41:12.234" endtime="20231013 00:41:12.326"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${destination}</arg>
+<arg>${destin}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231013 00:41:12.328" level="INFO">${destination} = Cairo</msg>
+<status status="PASS" starttime="20231013 00:41:12.327" endtime="20231013 00:41:12.328"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Departure: ${departure}, Destination: ${destination}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231013 00:41:12.329" endtime="20231013 00:41:12.329"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:11.799" endtime="20231013 00:41:12.330"/>
+</test>
+<test id="s1-t3" name="&quot;Find Flights&quot; button is usable" line="28">
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>xpath://input[@value='Find Flights']</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<msg timestamp="20231013 00:41:12.348" level="INFO">Current page contains input 'xpath://input[@value='Find Flights']'.</msg>
+<status status="PASS" starttime="20231013 00:41:12.331" endtime="20231013 00:41:12.350"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@value='Find Flights']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:12.351" level="INFO">Clicking button 'xpath://input[@value='Find Flights']'.</msg>
+<status status="PASS" starttime="20231013 00:41:12.350" endtime="20231013 00:41:17.819"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:12.330" endtime="20231013 00:41:17.819"/>
+</test>
+<test id="s1-t4" name="Check the results and pick your flight" line="33">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Flights from ${departure} to ${destination}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231013 00:41:17.837" level="INFO">Current page contains text 'Flights from Boston to Cairo'.</msg>
+<status status="PASS" starttime="20231013 00:41:17.822" endtime="20231013 00:41:17.838"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://html/body/div[2]/table/tbody/tr[1]/td[1]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231013 00:41:17.850" level="INFO">Current page contains element 'xpath://html/body/div[2]/table/tbody/tr[1]/td[1]'.</msg>
+<status status="PASS" starttime="20231013 00:41:17.838" endtime="20231013 00:41:17.850"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price}</var>
+<arg>xpath:/html/body/div[2]/table/tbody/tr[5]/td[6]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:17.876" level="INFO">${price} = $233.98</msg>
+<status status="PASS" starttime="20231013 00:41:17.851" endtime="20231013 00:41:17.876"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${price}</arg>
+<arg>${price}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231013 00:41:17.877" level="INFO">${233.98} = $233.98</msg>
+<status status="PASS" starttime="20231013 00:41:17.877" endtime="20231013 00:41:17.878"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${company}</var>
+<arg>xpath:/html/body/div[2]/table/tbody/tr[5]/td[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:17.901" level="INFO">${company} = Lufthansa</msg>
+<status status="PASS" starttime="20231013 00:41:17.878" endtime="20231013 00:41:17.901"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${company}</arg>
+<arg>${company}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231013 00:41:17.902" level="INFO">${company} = Lufthansa</msg>
+<status status="PASS" starttime="20231013 00:41:17.902" endtime="20231013 00:41:17.903"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flightno}</var>
+<arg>xpath:/html/body/div[2]/table/tbody/tr[5]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:17.925" level="INFO">${flightno} = 4346</msg>
+<status status="PASS" starttime="20231013 00:41:17.904" endtime="20231013 00:41:17.926"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${flightno}</arg>
+<arg>${flightno}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231013 00:41:17.927" level="INFO">${flightno} = 4346</msg>
+<status status="PASS" starttime="20231013 00:41:17.926" endtime="20231013 00:41:17.927"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Price: ${price}, Company: ${company}, Flight no: ${flightno}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231013 00:41:17.927" endtime="20231013 00:41:17.928"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://html/body/div[2]/table/tbody/tr[5]/td[1]/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:17.929" level="INFO">Clicking button 'xpath://html/body/div[2]/table/tbody/tr[5]/td[1]/input'.</msg>
+<status status="PASS" starttime="20231013 00:41:17.929" endtime="20231013 00:41:23.136"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:17.820" endtime="20231013 00:41:23.138"/>
+</test>
+<test id="s1-t5" name="Check that flight info is found on the new page and save the full price as a variable" line="55">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price}</var>
+<arg>xpath://html/body/div[2]/p[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.165" level="INFO">${price} = Price: 400</msg>
+<status status="PASS" starttime="20231013 00:41:23.141" endtime="20231013 00:41:23.165"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${company}</var>
+<arg>xpath://html/body/div[2]/p[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.189" level="INFO">${company} = Airline: United</msg>
+<status status="PASS" starttime="20231013 00:41:23.166" endtime="20231013 00:41:23.189"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${flightno}</var>
+<arg>xpath://html/body/div[2]/p[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.213" level="INFO">${flightno} = Flight Number: UA954</msg>
+<status status="PASS" starttime="20231013 00:41:23.190" endtime="20231013 00:41:23.213"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${price}' == 'None'</arg>
+<arg>Fail</arg>
+<arg>Variable '${price}' not found.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231013 00:41:23.215" endtime="20231013 00:41:23.216"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${price}</arg>
+<arg>${price}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20231013 00:41:23.216" endtime="20231013 00:41:23.217"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${company}</arg>
+<arg>${company}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20231013 00:41:23.218" endtime="20231013 00:41:23.218"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<arg>${flightno}</arg>
+<arg>${flightno}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" starttime="20231013 00:41:23.219" endtime="20231013 00:41:23.219"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Price: ${price}, Company: ${company}, Flight no: ${flightno}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231013 00:41:23.220" endtime="20231013 00:41:23.221"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${fullprice}</var>
+<arg>xpath://html/body/div[2]/p[5]/em</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.246" level="INFO">${fullprice} = 914.76</msg>
+<status status="PASS" starttime="20231013 00:41:23.221" endtime="20231013 00:41:23.246"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${fullprice}</arg>
+<arg>${fullprice}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231013 00:41:23.248" level="INFO">${fullprice} = 914.76</msg>
+<status status="PASS" starttime="20231013 00:41:23.247" endtime="20231013 00:41:23.248"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:23.139" endtime="20231013 00:41:23.249"/>
+</test>
+<test id="s1-t6" name="Fill out the traveller name and address" line="77">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:inputName</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.252" level="INFO">Clicking element 'id:inputName'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.251" endtime="20231013 00:41:23.317"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:inputName</arg>
+<arg>Pekka Pouta</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.318" level="INFO">Typing text 'Pekka Pouta' into text field 'id:inputName'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.318" endtime="20231013 00:41:23.409"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:address</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.412" level="INFO">Clicking element 'id:address'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.410" endtime="20231013 00:41:23.470"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:address</arg>
+<arg>Mäenpääntie 1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.471" level="INFO">Typing text 'Mäenpääntie 1' into text field 'id:address'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.470" endtime="20231013 00:41:23.557"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:city</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.559" level="INFO">Clicking element 'id:city'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.558" endtime="20231013 00:41:23.629"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:city</arg>
+<arg>Riksu</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.630" level="INFO">Typing text 'Riksu' into text field 'id:city'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.629" endtime="20231013 00:41:23.704"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:state</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.706" level="INFO">Clicking element 'id:state'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.705" endtime="20231013 00:41:23.767"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:state</arg>
+<arg>Suomi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.769" level="INFO">Typing text 'Suomi' into text field 'id:state'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.768" endtime="20231013 00:41:23.851"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:zipCode</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.853" level="INFO">Clicking element 'id:zipCode'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.852" endtime="20231013 00:41:23.915"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:zipCode</arg>
+<arg>11223</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:23.917" level="INFO">Typing text '11223' into text field 'id:zipCode'.</msg>
+<status status="PASS" starttime="20231013 00:41:23.916" endtime="20231013 00:41:23.994"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:23.250" endtime="20231013 00:41:23.994"/>
+</test>
+<test id="s1-t7" name="Fill out the credit card info" line="94">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>id:cardType</arg>
+<arg>dinersclub</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20231013 00:41:23.999" level="INFO">Selecting options from selection list 'id:cardType' by value dinersclub.</msg>
+<status status="PASS" starttime="20231013 00:41:23.997" endtime="20231013 00:41:24.089"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:creditCardNumber</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:24.091" level="INFO">Typing text '1234567890' into text field 'id:creditCardNumber'.</msg>
+<status status="PASS" starttime="20231013 00:41:24.089" endtime="20231013 00:41:24.201"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:creditCardMonth</arg>
+<arg>8</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:24.203" level="INFO">Typing text '8' into text field 'id:creditCardMonth'.</msg>
+<status status="PASS" starttime="20231013 00:41:24.202" endtime="20231013 00:41:24.307"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:creditCardYear</arg>
+<arg>2027</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:24.308" level="INFO">Typing text '2027' into text field 'id:creditCardYear'.</msg>
+<status status="PASS" starttime="20231013 00:41:24.308" endtime="20231013 00:41:24.427"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:nameOnCard</arg>
+<arg>Pekka Pouta</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:24.428" level="INFO">Typing text 'Pekka Pouta' into text field 'id:nameOnCard'.</msg>
+<status status="PASS" starttime="20231013 00:41:24.427" endtime="20231013 00:41:24.548"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id:rememberMe</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:24.549" level="INFO">Selecting checkbox 'id:rememberMe'.</msg>
+<status status="PASS" starttime="20231013 00:41:24.548" endtime="20231013 00:41:24.649"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[2]/form/div[11]/div/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231013 00:41:24.651" level="INFO">Clicking button 'xpath:/html/body/div[2]/form/div[11]/div/input'.</msg>
+<status status="PASS" starttime="20231013 00:41:24.650" endtime="20231013 00:41:25.045"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:23.996" endtime="20231013 00:41:25.046"/>
+</test>
+<test id="s1-t8" name="The booking confirmation page" line="110">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Thank you for your purchase today!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231013 00:41:25.049" endtime="20231013 00:41:25.061"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231013 00:41:25.062" endtime="20231013 00:41:27.234"/>
+</kw>
+<status status="PASS" starttime="20231013 00:41:25.048" endtime="20231013 00:41:27.235"/>
+</test>
+<status status="PASS" starttime="20231013 00:41:02.423" endtime="20231013 00:41:27.237"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="Bookaflight">Bookaflight</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
